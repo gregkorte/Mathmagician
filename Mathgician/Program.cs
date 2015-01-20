@@ -14,11 +14,17 @@ namespace Mathgician
             Console.WriteLine("What shall I MATH?\n Fibonacci, Primes, OrderedParallelQuery Integers");
             string desiredMaths = Console.ReadLine();
             Console.WriteLine("Ok, I'm going to do some " + desiredMaths + "!");
-            if ("Integers" == desiredMaths){
+            if ("Integers" == desiredMaths)
+            {
                 PrintIntegers();
             } 
-            else if("Fibonacci" == desiredMaths){
+            else if("Fibonacci" == desiredMaths)
+            {
                 PrintFibonacciSequence();
+            }
+            else if ("Primes" == desiredMaths)
+            {
+                PrintPrimeNumbers();
             }
             else
             {
@@ -26,6 +32,33 @@ namespace Mathgician
                 }
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
+        }
+
+        private static void PrintPrimeNumbers()
+        {
+            int prime = 3;
+            Console.WriteLine(2);
+            bool isPrime = true;
+            while (true)
+            {
+                {
+                    for (int i = prime/2; i > 1; i++)
+                    {
+                        if (prime % i == 0)
+                        {
+                            isPrime = false;
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine(prime);
+                            System.Threading.Thread.Sleep(200);
+                        }
+                    }
+                    
+                    prime++;
+                }
+            }
         }
 
         private static void PrintFibonacciSequence()
